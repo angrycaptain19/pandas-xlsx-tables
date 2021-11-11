@@ -80,7 +80,7 @@ def dfs_to_xlsx_tables(
             )
         elif header_orientation == "horizontal":
             # adjust row widths
-            for i, width in enumerate([len(str(x)) for x in df.columns]):
+            for i, width in enumerate(len(str(x)) for x in df.columns):
                 ws.set_column(i, i, max(8.43, width))
     wb.close()
     return
